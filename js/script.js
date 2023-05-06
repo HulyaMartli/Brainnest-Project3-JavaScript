@@ -29,10 +29,10 @@ See you next time! 🙋🏻‍♀️
 function control(userChoice) {
     const choices = ["rock", "paper", "scissors"]
     try {
-        if (!choices.includes(userChoice.toLowerCase())) {
+        if (!choices.includes(userChoice.toLowerCase().trim())) {
             if (userChoice === "") {
                 userChoice = prompt(inputNull);
-                if (choices.includes(userChoice.toLowerCase())) {
+                if (choices.includes(userChoice.toLowerCase().trim())) {
                     return userChoice;
                 } else {
                     userChoice = "";
@@ -44,7 +44,7 @@ function control(userChoice) {
             } else {
                 userChoice = prompt(inputMismatch);
                 try {
-                    if (choices.includes(userChoice.toLowerCase())) {
+                    if (choices.includes(userChoice.toLowerCase().trim())) {
                         return userChoice;
                     } else {
                         userChoice = "";
@@ -76,12 +76,12 @@ function computerPlay() {
 
 function playRound(userChoice, computerChoice) {
     if (userChoice !== "") {
-        if (userChoice.toLowerCase() == computerChoice) {
+        if (userChoice.toLowerCase().trim() == computerChoice) {
             return "It's a tie";
-        } else if ((userChoice.toLowerCase() === "rock" && computerChoice === "scissors") || (userChoice.toLowerCase() === "paper" && computerChoice === "rock") || (userChoice.toLowerCase() === "scissors" && computerChoice === "paper")) {
-            return "You win the round! " + userChoice.toLowerCase() + " beats " + computerChoice;
-        } else if ((userChoice.toLowerCase() === "scissors" && computerChoice === "rock") || (userChoice.toLowerCase() === "rock" && computerChoice === "paper") || (userChoice.toLowerCase() === "paper" && computerChoice === "scissors")) {
-            return "You lose the round... " + computerChoice + " beats " + userChoice.toLowerCase();
+        } else if ((userChoice.toLowerCase().trim() === "rock" && computerChoice === "scissors") || (userChoice.toLowerCase().trim() === "paper" && computerChoice === "rock") || (userChoice.toLowerCase().trim() === "scissors" && computerChoice === "paper")) {
+            return "You win the round! " + userChoice.toLowerCase().trim() + " beats " + computerChoice;
+        } else if ((userChoice.toLowerCase().trim() === "scissors" && computerChoice === "rock") || (userChoice.toLowerCase().trim() === "rock" && computerChoice === "paper") || (userChoice.toLowerCase().trim() === "paper" && computerChoice === "scissors")) {
+            return "You lose the round... " + computerChoice + " beats " + userChoice.toLowerCase().trim();
         }
     }
 }
