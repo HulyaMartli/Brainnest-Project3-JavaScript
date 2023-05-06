@@ -111,16 +111,20 @@ function game() {
     }
 
     if (userChoice !== "") {
+        let finalResult = "Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore;
 
         if (userScore === computerScore) {
-            console.log("GAME OVER\nIt'a tie!");
-            console.log("Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore)
+            console.log("GAME OVER\nIts' a tie!");
+            console.log(finalResult)
+            ("GAME OVER\nIts' a tie!"+finalResult)
         } else if (userScore > computerScore) {
             console.log("GAME OVER\nYOU WIN!");
-            console.log("Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore)
+            console.log(finalResult)
+            alert("GAME OVER\nYOU WIN!"+finalResult)
         } else {
             console.log("GAME OVER\nYou lose...");
-            console.log("Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore)
+            console.log(finalResult)
+            alert("GAME OVER\nYou lose..."+finalResult)
         }
     }
 
