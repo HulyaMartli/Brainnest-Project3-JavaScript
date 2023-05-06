@@ -14,7 +14,7 @@ const inputNull = `Opps! You didn't wrote your choice. 😶
 You should write one of the following words:
 "Rock", "paper" or "scissors"
 Now try again! Rock, Paper or Scissors?
-(Or press Cancel to exit 🔄️)`;
+(Or press Cancel to exit 🏃🏻‍♀️)`;
 
 const inputMismatch = `Opps! Guess something went wrong. 🥲
 You should write one of the following words:
