@@ -7,6 +7,7 @@ Project 3 for the week of May 1-5, 2023, in the Brainnest Frontend Development I
 ## Project Requirements
 
 ## Preview
+https://javascript-rock-paper-scissors.vercel.app/
 
 ## Tech Stack/Tools
 
