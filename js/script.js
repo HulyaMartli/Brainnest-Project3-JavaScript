@@ -22,9 +22,14 @@ You should write one of the following words:
 Now try again! Rock, Paper or Scissors?
 (Or press Cancel to exit 🏃🏻‍♀️)`
 
+const userCanceled = `Did you pressed Cancel by mistake? 👀
+Let's continue!
+(If you want to exit press Cancel again!)`;
+
 const bye = `Guess you don't want to play? 🥹
 See you next time! 🙋🏻‍♀️
 (To restart the game please reload the page 🔄️)`
+
 
 function control(userChoice) {
     const choices = ["rock", "paper", "scissors"]
@@ -40,7 +45,12 @@ function control(userChoice) {
                     console.log("Bye :) Come again!")
                 }
             } else if (userChoice === null) {
-                userChoice = "";
+                userChoice = prompt(userCanceled)
+                if (userChoice === null) {
+                    userChoice = "";
+                    alert(bye);
+                    console.log("Bye :) Come again!")
+                }
             } else {
                 userChoice = prompt(inputMismatch);
                 try {
@@ -52,19 +62,25 @@ function control(userChoice) {
                         console.log("Bye :) Come again!")
                     }
                 } catch (error) {
-                    userChoice = "";
-                    alert(bye);
-                    console.log("Bye :) Come again!")
+                    userChoice = prompt(userCanceled)
+                    if (userChoice === null) {
+                        userChoice = "";
+                        alert(bye);
+                        console.log("Bye :) Come again!")
+                    }
                 }
             }
         }
 
     } catch (error) {
-        alert(bye);
-        console.log("Bye :) Come again!")
-        userChoice = "";
+        userChoice = prompt(userCanceled)
+        if (userChoice === null) {
+            userChoice = "";
+            alert(bye);
+            console.log("Bye :) Come again!")
+        }
     }
-    
+
     return userChoice;
 }
 
@@ -116,15 +132,15 @@ function game() {
         if (userScore === computerScore) {
             console.log("GAME OVER\nIts' a tie!");
             console.log(finalResult)
-            ("GAME OVER\nIts' a tie!"+finalResult)
+                ("GAME OVER\nIts' a tie!" + finalResult)
         } else if (userScore > computerScore) {
             console.log("GAME OVER\nYOU WIN!");
             console.log(finalResult)
-            alert("GAME OVER\nYOU WIN!"+finalResult)
+            alert("GAME OVER\nYOU WIN!" + finalResult)
         } else {
             console.log("GAME OVER\nYou lose...");
             console.log(finalResult)
-            alert("GAME OVER\nYou lose..."+finalResult)
+            alert("GAME OVER\nYou lose..." + finalResult)
         }
     }
 
