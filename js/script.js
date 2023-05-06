@@ -119,11 +119,17 @@ function game() {
         console.log("You: " + userChoice.toLowerCase().trim());
         console.log("Opponent: " + computerChoice);
         console.log(roundResult);
-        if (roundResult.includes("win")) {
-            userScore++;
-        } else if (roundResult.includes("lose")) {
-            computerScore++;
+        try {
+            if (roundResult.includes("win")) {
+                userScore++;
+            } else if (roundResult.includes("lose")) {
+                computerScore++;
+            }
+        } catch (error) {
+            alert(bye);
+            console.log("Bye :) Come again!")
         }
+
     }
 
     if (userChoice !== "") {
