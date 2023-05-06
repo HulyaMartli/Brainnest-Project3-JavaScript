@@ -116,7 +116,7 @@ function game() {
         let computerChoice = computerPlay();
         console.log("==ROUND " + (i + 1) + "==");
         roundResult = playRound(userChoice, computerChoice);
-        console.log("You: " + userChoice);
+        console.log("You: " + userChoice.toLowerCase().trim());
         console.log("Opponent: " + computerChoice);
         console.log(roundResult);
         if (roundResult.includes("win")) {
@@ -127,7 +127,7 @@ function game() {
     }
 
     if (userChoice !== "") {
-        let finalResult = "Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore;
+        let finalResult = "Your Score: " + userScore.toLowerCase().trim() + " <---> " + "Opponent Score: " + computerScore;
 
         if (userScore === computerScore) {
             console.log("GAME OVER\nIts' a tie!");
