@@ -126,8 +126,8 @@ function game() {
                 computerScore++;
             }
         } catch (error) {
-             alert(bye);
-                console.log("Bye :) Come again!")
+            alert(bye);
+            console.log("Bye :) Come again!")
         }
 
     }
