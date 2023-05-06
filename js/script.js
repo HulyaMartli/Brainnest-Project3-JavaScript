@@ -126,14 +126,14 @@ function game() {
                 computerScore++;
             }
         } catch (error) {
-            alert(bye);
-            console.log("Bye :) Come again!")
+             alert(bye);
+                console.log("Bye :) Come again!")
         }
 
     }
 
     if (userChoice !== "") {
-        let finalResult = "Your Score: " + userScore.toLowerCase().trim() + " <---> " + "Opponent Score: " + computerScore;
+        let finalResult = "Your Score: " + userScore + " <---> " + "Opponent Score: " + computerScore;
 
         if (userScore === computerScore) {
             console.log("GAME OVER\nIts' a tie!");
