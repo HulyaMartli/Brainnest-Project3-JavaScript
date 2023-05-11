@@ -43,12 +43,22 @@ function computerPlay() {
 function userPlay(userChoice) {
     userChoice = prompt(getInputMessage);
     do {
+        try {
+            userChoice = ignoreCasingAndSpaces(userChoice);
+        } catch (error) {
+
+        }
         userChoice = inputControl(userChoice);
         // controlling if user wants to exit:
         if (userChoice === "c" || userChoice === "C") {
             break;
         }
     } while (!choices.includes(userChoice))
+    return userChoice;
+}
+
+function ignoreCasingAndSpaces(userChoice) {
+    userChoice = userChoice.toLowerCase().trim();
     return userChoice;
 }
 
@@ -84,9 +94,10 @@ function mismatchControl(userChoice) {
         && userChoice !== null && userChoice !== "") {
         userChoice = prompt(inputMismatch);
     }
-    userChoice=userChoice.toLowerCase().trim();
     return userChoice;
 }
+
+
 
 function playRound(userChoice, computerChoice) {
     if (userChoice == computerChoice) {
